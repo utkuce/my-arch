@@ -22,7 +22,7 @@ pacman -S intel-ucode --noconfirm
 echo -e 'default\tarch\ntimeout\t0\neditor\t0' > $bootp/loader/loader.conf
 
 arch_conf=$bootp/loader/entries/arch.conf 
-echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' >> $arch_conf
+echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
 echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
 
 useradd -m -G wheel utku
