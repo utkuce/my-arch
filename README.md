@@ -5,3 +5,5 @@
 # mv arch-setup*/* /
 # sh start sh <root_partition> <boot_partition> <password>
 ```
+
+Shorter URL: goo.gl/cAo8kJ
