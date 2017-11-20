@@ -13,9 +13,9 @@ mount $bootp /mnt/boot
 pacstrap /mnt base
 genfstab -U /mnt >> /mnt/etc/fstab
 
-sed -i '1ipass=$pass' after_chroot.sh
-sed -i '1ibootp=$bootp' after_chroot.sh
-sed -i '1iarch=$arch' after_chroot.sh
+sed -i '1ipass='$pass after_chroot.sh
+sed -i '1ibootp='$bootp after_chroot.sh
+sed -i '1iarch='$arch after_chroot.sh
 
 chmod +x after_chroot.sh
 mv after_chroot.sh /mnt
