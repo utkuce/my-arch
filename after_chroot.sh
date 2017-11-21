@@ -35,7 +35,7 @@ sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 echo "exec ~/after_reboot.sh" > /root/.bash_profile
  
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
-pacman -S xorg-server xorg-xinit --noconfirm
+pacman -S xorg-server xorg-xinit i3 --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 
 #systemctl start NetworkManager.service
