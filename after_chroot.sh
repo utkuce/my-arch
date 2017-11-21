@@ -35,5 +35,8 @@ sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 echo "exec ~/after_reboot.sh" > /root/.bash_profile
  
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
+pacman -S xorg-server xorg-xinit --noconfirm
+echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
+
 #systemctl start NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
