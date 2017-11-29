@@ -4,7 +4,7 @@ set -x
 ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 hwclock --systohc
 
-#sed -i s/'#tr_TR.UTF-8'/'tr_TR.UTF-8'/g /etc/locale.gen
+sed -i s/'#en_US.UTF-8'/'en_US.UTF-8'/g /etc/locale.gen
 echo 'LC_TIME=en_DK' > /etc/locale.conf
 locale-gen
 echo 'KEYMAP=trq' > /etc/vconsole.conf
@@ -31,8 +31,6 @@ echo 'utku:'$pass|chpasswd
 pacman -S sudo --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
-
-echo "exec ~/after_reboot.sh" > /root/.bash_profile
  
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 pacman -S xorg-server xorg-xinit i3 --noconfirm
