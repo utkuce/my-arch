@@ -22,7 +22,7 @@ mv after_chroot.sh /mnt
 
 arch-chroot /mnt ./after_chroot.sh
 
-chmod +x after_reboot.sh
+chmod +x /after_reboot.sh
 mv after_reboot /mnt/root/
 
 read -p "Installation complete. Reboot (y/n)?" choice
