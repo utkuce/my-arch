@@ -20,9 +20,9 @@ sed -i '3iarch='$arch /after_chroot.sh
 chmod +x after_chroot.sh
 mv after_chroot.sh /mnt
 
-arch-chroot /mnt ./after_chroot.sh
+arch-chroot /mnt /after_chroot.sh
 
-read -p "Installation complete. Reboot (y/n)?" choice
+read -p "Installation complete. Reboot now (y/n)?" choice
 case "$choice" in 
   y|Y ) echo "yes";reboot;
   n|N ) echo "no";;
