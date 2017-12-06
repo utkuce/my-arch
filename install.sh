@@ -25,10 +25,11 @@ arch-chroot /mnt ./after_chroot.sh
 chmod +x after_reboot.sh
 mv after_reboot /mnt/root/
 
-read -p "Installaction complete. Reboot now? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-   reboot
-fi
+read -p "Installation complete. Reboot (y/n)?" choice
+case "$choice" in 
+  y|Y ) echo "yes";reboot;
+  n|N ) echo "no";;
+  * ) echo "invalid";;
+esac
 
 reboot
