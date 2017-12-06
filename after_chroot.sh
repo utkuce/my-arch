@@ -19,9 +19,6 @@ bootctl --path=$bootp install
 
 pacman -S intel-ucode --noconfirm
 
-mkdir boot/loader
-mkdir boot/loader/entries
-
 echo -e 'default\tarch\ntimeout\t0\neditor\t0' > boot/loader/loader.conf
 
 arch_conf=boot/loader/entries/arch.conf 
