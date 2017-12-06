@@ -17,7 +17,7 @@ sed -i '3ipass='$pass /after_chroot.sh
 sed -i '3ibootp='$bootp /after_chroot.sh
 sed -i '3iarch='$arch /after_chroot.sh
 
-chmod +x after_chroot.sh
+chmod +x /after_chroot.sh
 mv after_chroot.sh /mnt
 
 arch-chroot /mnt /after_chroot.sh
