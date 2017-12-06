@@ -19,11 +19,12 @@ bootctl --path=$bootp install
 
 pacman -S intel-ucode --noconfirm
 
-mkdir $bootp/loader/entries
+mkdir boot/loader
+mkdir boot/loader/entries
 
-echo -e 'default\tarch\ntimeout\t0\neditor\t0' > $bootp/loader/loader.conf
+echo -e 'default\tarch\ntimeout\t0\neditor\t0' > boot/loader/loader.conf
 
-arch_conf=$bootp/loader/entries/arch.conf 
+arch_conf=boot/loader/entries/arch.conf 
 echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
 echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
 
