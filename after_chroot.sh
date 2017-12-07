@@ -16,7 +16,7 @@ sed -i '8i127.0.0.1\t'$me'.localdomain\t'$me'\n' /etc/hosts
 
 timedatectl set-local-rtc 0
 echo 'root:'$pass|chpasswd
-bootctl --path=$bootp install
+bootctl install
 
 pacman -S intel-ucode --noconfirm
 
