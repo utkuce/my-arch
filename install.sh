@@ -22,11 +22,8 @@ mv /after_chroot.sh /mnt
 
 arch-chroot /mnt ./after_chroot.sh
 
-read -p "Installation complete. Reboot now (y/n)?" choice
-case "$choice" in 
-  y|Y ) echo "yes";reboot;
-  n|N ) echo "no";;
-  * ) echo "invalid";;
-esac
-
-reboot
+read -r -p "Installation complete. Reboot now? [Y/n]" response
+ response=${response,,} # tolower
+ if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+    reboot
+ fi
