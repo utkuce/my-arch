@@ -5,11 +5,12 @@ ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 hwclock --systohc
 
 sed -i s/'#en_US.UTF-8'/'en_US.UTF-8'/g /etc/locale.gen
-echo 'LC_TIME=en_DK' > /etc/locale.conf
+sed -i s/'#en_DK.UTF-8'/'en_DK.UTF-8'/g /etc/locale.gen
+echo -e 'LANG=en_US.UTF-8\nLC_TIME=en_DK.UTF-8' > /etc/locale.conf
 locale-gen
 echo 'KEYMAP=trq' > /etc/vconsole.conf
 
-me=lenovo-utku
+me=lenovo-arch
 echo $me > /etc/hostname
 sed -i '8i127.0.0.1\t'$me'.localdomain\t'$me'\n' /etc/hosts
 
@@ -33,8 +34,9 @@ sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
  
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
-pacman -S xorg-server xorg-xinit i3 --noconfirm
-echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
+pacman -S xorg-server xorg-xinit i3 xterm --noconfirm
+echo -e "setxkbmap tr\nxterm&\nexec i3" > /home/utku/.xinitrc
+echo "startx" >> /home/utku/.bash_profile
 
 #systemctl start NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
