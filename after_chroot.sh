@@ -35,7 +35,7 @@ sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
  
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 pacman -S xorg-server xorg-xinit i3 xterm --noconfirm
-echo -e "setxkbmap tr\nxterm&\nexec i3" > /home/utku/.xinitrc
+echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 echo "startx" >> /home/utku/.bash_profile
 pacman -S rofi nautilus --noconfirm
 
