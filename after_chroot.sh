@@ -40,7 +40,7 @@ echo "startx" >> /home/utku/.bash_profile
 pacman -S rofi nautilus --noconfirm
 
 mv /.config /mnt/home/utku/
-rm after_chroot.sh
+rm after_chroot.sh README.md
 
 systemctl enable NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
