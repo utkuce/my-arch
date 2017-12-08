@@ -38,6 +38,7 @@ pacman -S xorg-server xorg-xinit i3 xterm --noconfirm
 echo -e "setxkbmap tr\nxterm&\nexec i3" > /home/utku/.xinitrc
 echo "startx" >> /home/utku/.bash_profile
 
+mv /.config /mnt/home/utku/
 rm after_chroot.sh
 
 #systemctl start NetworkManager.service
