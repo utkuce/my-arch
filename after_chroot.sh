@@ -39,7 +39,6 @@ echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 echo "startx" >> /home/utku/.bash_profile
 pacman -S rofi nautilus --noconfirm
 
-mv /.config /mnt/home/utku/
 rm after_chroot.sh README.md
 
 systemctl enable NetworkManager.service
