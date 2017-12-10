@@ -32,12 +32,16 @@ echo 'utku:'$pass|chpasswd
 pacman -S sudo --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
+
+autologin=/etc/systemd/system/getty@tty1.service.d/override.conf
+echo -e '[Service]\nExecStart=' > $autologin
+echo 'ExecStart=-/usr/bin/agetty --autologin utku --noclear %I $TERM' >> $autologin
  
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 pacman -S xorg-server xorg-xinit i3 xterm --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
-echo "startx" >> /home/utku/.bash_profile
-pacman -S rofi nautilus --noconfirm
+echo "exec startx" >> /home/utku/.bash_profile
+pacman -S rofi --noconfirm
 
 rm after_chroot.sh README.md
 
