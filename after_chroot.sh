@@ -33,6 +33,7 @@ pacman -S sudo --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
 
+mkdir /etc/systemd/system/getty@tty1.service.d/
 autologin=/etc/systemd/system/getty@tty1.service.d/override.conf
 echo -e '[Service]\nExecStart=' > $autologin
 echo 'ExecStart=-/usr/bin/agetty --autologin utku --noclear %I $TERM' >> $autologin
