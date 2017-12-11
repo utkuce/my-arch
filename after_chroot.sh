@@ -29,7 +29,7 @@ echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
 useradd -m -G wheel utku
 echo 'utku:'$pass|chpasswd
 
-pacman -S sudo --noconfirm
+pacman -S --needed base-devel --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
 
