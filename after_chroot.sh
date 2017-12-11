@@ -42,7 +42,7 @@ pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 pacman -S xorg-server xorg-xinit i3 xterm --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
-pacman -S rofi --noconfirm
+pacman -S rofi nautilus --noconfirm
 
 rm after_chroot.sh README.md
 
