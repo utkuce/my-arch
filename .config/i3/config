@@ -133,3 +133,8 @@ bar {
 
 # startup
 exec --no-startup-id compton -f
+
+# gaps
+gaps inner 2
+gaps outer 5
+smart_gaps on
