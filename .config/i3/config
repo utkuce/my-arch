@@ -3,7 +3,7 @@ set $mod Mod1
 font pango:monospace 8
 
 # rofi
-bindsym Super_L exec rofi -show drun
+bindsym Super_L exec "rofi -show drun -modi drun,web:~/.config/web.sh"
 
 #nautilus
 bindsym $mod+e exec nautilus --class Nautilus
