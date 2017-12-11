@@ -1,6 +1,4 @@
 if [ ! -z "$@" ]
 then
-	QUERY=$@
-	coproc (xdg-open https://duckduckgo.com/?q="$QUERY")
-	exit
+	coproc (xdg-open https://duckduckgo.com/?q="$@")
 fi
