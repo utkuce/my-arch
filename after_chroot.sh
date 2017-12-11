@@ -42,9 +42,21 @@ pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 pacman -S xorg-server xorg-xinit i3 xterm --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
-pacman -S rofi xdg-utils nautilus --noconfirm
 
-rm after_chroot.sh README.md
+pacman -S rofi xdg-utils nautilus firefox --noconfirm
+
+# install pacaur
+mkdir -p /tmp/pacaur_install
+cd /tmp/pacaur_install
+pacman -S expac yajl git --noconfirm --needed
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
+makepkg PKGBUILD --skippgpcheck --install --needed
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
+makepkg PKGBUILD --install --needed
+
+pacaur -S i3-gaps
 
 systemctl enable NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
+
+rm after_chroot.sh README.md
