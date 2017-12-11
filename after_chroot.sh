@@ -53,6 +53,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
 makepkg PKGBUILD --skippgpcheck --install --needed
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
 makepkg PKGBUILD --install --needed
+rm -r /tmp/pacaur_install
 
 pacaur -S i3-gaps
 
