@@ -3,10 +3,10 @@ set $mod Mod1
 font pango:monospace 8
 
 # rofi
-bindsym Super_L exec "rofi -show drun -modi drun,web:~/.config/web.sh"
+bindsym Super_L exec --no-startup-id "rofi -show drun -modi drun,web:~/.config/web.sh"
 
 #nautilus
-bindsym $mod+e exec nautilus --class Nautilus
+bindsym $mod+e exec --no-startup-id nautilus --class Nautilus
 for_window [class="Nautilus"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -130,3 +130,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# startup
+exec --no-startup-id compton -f
