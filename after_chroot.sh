@@ -33,11 +33,12 @@ pacman -S --needed base-devel --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
 
+# autologin for my user
 mkdir /etc/systemd/system/getty@tty1.service.d/
 autologin=/etc/systemd/system/getty@tty1.service.d/override.conf
 echo -e '[Service]\nExecStart=' > $autologin
 echo 'ExecStart=-/usr/bin/agetty --autologin utku --noclear %I $TERM' >> $autologin
- 
+
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 pacman -S xorg-server xorg-xinit xterm --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
