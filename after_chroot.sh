@@ -47,14 +47,14 @@ pacman -S rofi xdg-utils nautilus firefox --noconfirm
 
 # install pacaur
 su -c \
-"mkdir -p /tmp/pacaur_install;\
-cd /tmp/pacaur_install;\
-pacman -S expac yajl git --noconfirm --needed;\
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower;\
-makepkg PKGBUILD --skippgpcheck --install --needed;\
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur;\
-makepkg PKGBUILD --install --needed;\
-rm -r /tmp/pacaur_install;\
+"mkdir -p /tmp/pacaur_install &&\
+cd /tmp/pacaur_install &&\
+pacman -S expac yajl git --noconfirm --needed &&\
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower &&\
+makepkg PKGBUILD --skippgpcheck --install --needed &&\
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur &&\
+makepkg PKGBUILD --install --needed &&\
+rm -r /tmp/pacaur_install &&\
 pacaur -S i3-gaps" utku
 
 systemctl enable NetworkManager.service
