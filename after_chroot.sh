@@ -53,7 +53,7 @@ pacman -S expac yajl git --noconfirm --needed
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
 su -c "makepkg PKGBUILD --skippgpcheck --install --needed" utku
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-su -c "makepkg PKGBUILD --install --needed"
+su -c "makepkg PKGBUILD --install --needed" utku
 rm -r /tmp/pacaur_install
 pacaur -S i3-gaps
 
