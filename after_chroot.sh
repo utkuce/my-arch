@@ -46,6 +46,7 @@ echo "exec startx" >> /home/utku/.bash_profile
 pacman -S rofi xdg-utils nautilus firefox --noconfirm
 
 # install pacaur
+su utku
 mkdir -p /tmp/pacaur_install
 cd /tmp/pacaur_install
 pacman -S expac yajl git --noconfirm --needed
