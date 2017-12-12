@@ -49,11 +49,11 @@ pacman -S rofi xdg-utils nautilus firefox --noconfirm
 su -c \
 "mkdir -p /tmp/pacaur_install &&\
 cd /tmp/pacaur_install &&\
-pacman -S expac yajl git --noconfirm --needed && \
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower && \
-makepkg PKGBUILD --skippgpcheck --install --needed && \
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur && \
-makepkg PKGBUILD --install --needed && \
+sudo pacman -S expac yajl git --noconfirm --needed && \
+sudo curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower && \
+sudo makepkg PKGBUILD --skippgpcheck --install --needed && \
+sudo curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur && \
+sudo makepkg PKGBUILD --install --needed && \
 rm -r /tmp/pacaur_install && \
 pacaur -S i3-gaps" utku
 
