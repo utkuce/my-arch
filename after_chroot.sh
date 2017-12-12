@@ -47,15 +47,14 @@ echo "exec startx" >> /home/utku/.bash_profile
 pacman -S rofi xdg-utils --noconfirm
 
 # install pacaur
-mkdir -p /home/utku/pacaur_install
-chown -R utku /home/utku/pacaur_install utku
-cd /home/utku/pacaur_install
+mkdir -p /tmp/pacaur_install
+cd /tmp/pacaur_install
 pacman -S expac yajl git --noconfirm --needed
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
-su -c "makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm" utku
+makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm --asroot
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-su -c "makepkg PKGBUILD --install --needed --noconfirm" utku
-rm -r /home/utku/pacaur_install
+makepkg PKGBUILD --install --needed --noconfirm --asroot
+rm -r /tmp/pacaur_install
 pacaur -S i3-gaps
 
 systemctl enable NetworkManager.service
