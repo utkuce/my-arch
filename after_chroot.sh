@@ -44,18 +44,7 @@ pacman -S xorg-server xorg-xinit xterm --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
 
-pacman -S rofi xdg-utils --noconfirm
-
-# install pacaur
-mkdir -p /tmp/pacaur_install
-cd /tmp/pacaur_install
-pacman -S expac yajl git --noconfirm --needed
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
-makepkg PKGBUILD --skippgpcheck --install --needed --noconfirm --asroot
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-makepkg PKGBUILD --install --needed --noconfirm --asroot
-rm -r /tmp/pacaur_install
-pacaur -S i3-gaps
+pacman -S rofi xdg-utils i3 --noconfirm
 
 systemctl enable NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
