@@ -47,15 +47,15 @@ pacman -S rofi xdg-utils --noconfirm
 
 # install pacaur
 su -c \
-"mkdir -p /tmp/pacaur_install &&\
-cd /tmp/pacaur_install &&\
-sudo pacman -S expac yajl git --noconfirm --needed && \
-sudo curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower && \
-sudo makepkg PKGBUILD --skippgpcheck --install --needed && \
-sudo curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur && \
-sudo makepkg PKGBUILD --install --needed && \
-rm -r /tmp/pacaur_install && \
-pacaur -S i3-gaps" utku
+mkdir -p /tmp/pacaur_install
+cd /tmp/pacaur_install
+pacman -S expac yajl git --noconfirm --needed
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
+su -c "makepkg PKGBUILD --skippgpcheck --install --needed" utku
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
+su -c "makepkg PKGBUILD --install --needed"
+rm -r /tmp/pacaur_install
+pacaur -S i3-gaps
 
 systemctl enable NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
