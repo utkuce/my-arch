@@ -43,7 +43,7 @@ pacman -S xorg-server xorg-xinit xterm --noconfirm
 echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
 
-pacman -S rofi xdg-utils nautilus firefox --noconfirm
+pacman -S rofi xdg-utils --noconfirm
 
 # install pacaur
 su -c \
