@@ -47,13 +47,14 @@ pacman -S rofi xdg-utils --noconfirm
 
 # install pacaur
 mkdir -p /home/utku/pacaur_install
+chown -R utku /home/utku/pacaur_install utku
 cd /home/utku/pacaur_install
 pacman -S expac yajl git --noconfirm --needed
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
 su -c "makepkg PKGBUILD --skippgpcheck --install --needed" utku
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
 su -c "makepkg PKGBUILD --install --needed" utku
-rm -r //home/utku/pacaur_install
+rm -r /home/utku/pacaur_install
 pacaur -S i3-gaps
 
 systemctl enable NetworkManager.service
