@@ -59,4 +59,4 @@ pacaur -S i3-gaps
 systemctl enable NetworkManager.service
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
-rm after_chroot.sh README.md
+rm /after_chroot.sh /README.md
