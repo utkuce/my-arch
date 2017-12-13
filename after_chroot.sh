@@ -65,4 +65,5 @@ su -c "pacaur -S i3-gaps" utku
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
+chown -R utku /mnt/home/utku
 rm /after_chroot.sh /README.md
