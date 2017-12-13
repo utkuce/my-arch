@@ -50,7 +50,7 @@ pacman -S rofi xdg-utils --noconfirm
 
 # install pacaur
 mkdir -p /tmp/pacaur_install
-chown -R utku /tmp/pacaur_install utku
+chown -R utku /tmp/pacaur_install
 cd /tmp/pacaur_install
 pacman -S expac yajl git --noconfirm --needed
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
