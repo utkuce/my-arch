@@ -42,8 +42,8 @@ echo 'ExecStart=-/usr/bin/agetty --autologin utku --noclear %I $TERM' >> $autolo
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
-pacman -S xorg-server xorg-xinit xterm --noconfirm
-echo -e "setxkbmap tr\nexec i3" > /home/utku/.xinitrc
+pacman -S xorg-server xorg-xinit xterm bspwm sxhkd --noconfirm
+echo -e "setxkbmap tr\nexec bspwm" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
 
 pacman -S rofi xdg-utils --noconfirm
@@ -61,8 +61,6 @@ pacman -U cower*.tar.xz --noconfirm
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
 su -c "makepkg PKGBUILD" utku
 pacman -U pacaur*.tar.xz --noconfirm
-
-su -c "export EDITOR=vi && pacaur -S i3-gaps --noconfirm" utku
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
