@@ -42,7 +42,7 @@ echo 'ExecStart=-/usr/bin/agetty --autologin utku --noclear %I $TERM' >> $autolo
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
-pacman -S xorg-server xorg-xinit xterm bspwm sxhkd --noconfirm
+pacman -S xorg-server xorg-xinit xterm bspwm sxhkd compton --noconfirm
 echo -e "setxkbmap tr\nsxhkd&\nxterm&\nexec bspwm" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
 
