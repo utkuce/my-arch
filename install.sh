@@ -21,7 +21,9 @@ chmod +x /after_chroot.sh
 mv /after_chroot.sh /mnt
 
 arch-chroot /mnt ./after_chroot.sh
+chmod +x /.config/sxhkd/sxhkdrc
 mv /.config /mnt/home/utku/
+
 arch-chroot /mnt "chown -R utku /home/utku"
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
