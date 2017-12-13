@@ -22,6 +22,7 @@ mv /after_chroot.sh /mnt
 
 arch-chroot /mnt ./after_chroot.sh
 chmod +x /.config/sxhkd/sxhkdrc
+chmod +x /.config/bspwm/bspwmrc
 mv /.config /mnt/home/utku/
 
 arch-chroot /mnt "chown -R utku /home/utku"
