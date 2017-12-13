@@ -59,11 +59,11 @@ pacman -U cower*.tar.xz --noconfirm
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
 su -c "makepkg PKGBUILD" utku
 pacman -U pacaur*.tar.xz --noconfirm
-rm -r /tmp/pacaur_install
 
 su -c "pacaur -S i3-gaps --noconfirm" utku
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
 chown -R utku /mnt/home/utku
+rm -r /tmp/pacaur_install
 rm /after_chroot.sh /README.md
