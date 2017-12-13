@@ -43,10 +43,10 @@ pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
 pacman -S xorg-server xorg-xinit xterm bspwm sxhkd --noconfirm
-echo -e "setxkbmap tr\nsxhkd&\nxterm&exec bspwm" > /home/utku/.xinitrc
+echo -e "setxkbmap tr\nsxhkd&\nxterm&\nexec bspwm" > /home/utku/.xinitrc
 echo "exec startx" >> /home/utku/.bash_profile
 
-pacman -S rofi xdg-utils --noconfirm
+pacman -S rofi xdg-utils ranger --noconfirm
 
 # install pacaur
 mkdir -p /tmp/pacaur_install
