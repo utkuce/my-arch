@@ -22,7 +22,6 @@ mv /after_chroot.sh /mnt
 
 arch-chroot /mnt ./after_chroot.sh
 mv /.config /mnt/home/utku/
-chown -R utku /mnt/home/utku
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
  response=${response,,} # tolower
