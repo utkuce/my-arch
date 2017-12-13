@@ -64,6 +64,5 @@ pacman -U pacaur*.tar.xz --noconfirm
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
-chown -R utku /home/utku
 rm -r /tmp/pacaur_install
 rm /after_chroot.sh
