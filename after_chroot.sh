@@ -62,9 +62,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
 su -c "makepkg PKGBUILD" utku
 pacman -U pacaur*.tar.xz --noconfirm
 
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=i3-gaps
-su -c "makepkg PKGBUILD" utku
-pacman -U i3-gaps*.tar.xz --noconfirm
+su -c "export EDITOR=vi && pacaur -S i3-gaps --noconfirm" utku
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
