@@ -44,8 +44,6 @@ systemctl enable NetworkManager.service
 
 pacman -S xorg-server xorg-xinit xterm bspwm sxhkd compton --noconfirm
 echo -e "setxkbmap tr\nsxhkd&\nxterm&\nexec bspwm" > /home/utku/.xinitrc
-
-echo 'export XDG_CONFIG_HOME="$HOME/.config"' >> /etc/profile
 echo "exec startx" >> /home/utku/.bash_profile
 
 pacman -S rofi xdg-utils ranger --noconfirm
