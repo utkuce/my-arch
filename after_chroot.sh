@@ -53,17 +53,21 @@ mkdir -p /tmp/pacaur_install
 chown -R utku /tmp/pacaur_install
 cd /tmp/pacaur_install
 pacman -S expac yajl git --noconfirm --needed
+
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
 su -c "makepkg PKGBUILD --skippgpcheck" utku
 pacman -U cower*.tar.xz --noconfirm
+
 curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
 su -c "makepkg PKGBUILD" utku
 pacman -U pacaur*.tar.xz --noconfirm
 
-su -c "pacaur -S i3-gaps --noconfirm" utku
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=i3-gaps
+su -c "makepkg PKGBUILD" utku
+pacman -U i3-gaps*.tar.xz --noconfirm
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
-chown -R utku /mnt/home/utku
+chown -R utku /home/utku
 rm -r /tmp/pacaur_install
 rm /after_chroot.sh /README.md
