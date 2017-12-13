@@ -61,7 +61,7 @@ su -c "makepkg PKGBUILD" utku
 pacman -U pacaur*.tar.xz --noconfirm
 rm -r /tmp/pacaur_install
 
-pacaur -S i3-gaps
+su -c "pacaur -S i3-gaps" utku
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
