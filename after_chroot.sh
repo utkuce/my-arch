@@ -66,4 +66,4 @@ pacman -U pacaur*.tar.xz --noconfirm
 
 chown -R utku /home/utku
 rm -r /tmp/pacaur_install
-rm /after_chroot.sh /README.md
+rm /after_chroot.sh
