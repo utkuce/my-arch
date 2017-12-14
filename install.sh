@@ -19,13 +19,8 @@ sed -i '3iarch='$arch /after_chroot.sh
 
 chmod +x /after_chroot.sh
 mv /after_chroot.sh /mnt
-
+mv /.config /mnt/tmp
 arch-chroot /mnt ./after_chroot.sh
-chmod +x /.config/sxhkd/sxhkdrc
-chmod +x /.config/bspwm/bspwmrc
-mv /.config /mnt/home/utku/
-
-arch-chroot /mnt 'chown -R utku /home/utku'
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
  response=${response,,} # tolower
