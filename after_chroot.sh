@@ -33,10 +33,6 @@ pacman -S --needed base-devel --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 #echo 'Defaults targetpw' >> /etc/sudoers
 
-chmod +x /tmp/.config/sxhkd/sxhkdrc
-chmod +x /tmp/.config/bspwm/bspwmrc
-mv /tmp/.config /home/utku
-
 # autologin for my user
 #mkdir /etc/systemd/system/getty@tty1.service.d/
 #autologin=/etc/systemd/system/getty@tty1.service.d/override.conf
