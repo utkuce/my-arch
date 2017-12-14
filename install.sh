@@ -19,7 +19,7 @@ sed -i '3iarch='$arch /after_chroot.sh
 
 chmod +x /after_chroot.sh
 mv /after_chroot.sh /mnt
-mv /.config /mnt/tmp
+mv /.config /mnt/tmp/
 arch-chroot /mnt ./after_chroot.sh
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
