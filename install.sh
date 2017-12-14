@@ -25,7 +25,7 @@ chmod +x /.config/sxhkd/sxhkdrc
 chmod +x /.config/bspwm/bspwmrc
 mv /.config /mnt/home/utku/
 
-arch-chroot /mnt "chown -R utku /home/utku"
+arch-chroot /mnt 'chown -R utku /home/utku'
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
  response=${response,,} # tolower
