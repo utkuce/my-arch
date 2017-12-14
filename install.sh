@@ -19,11 +19,17 @@ sed -i '3iarch='$arch /after_chroot.sh
 
 chmod +x /after_chroot.sh
 mv /after_chroot.sh /mnt
-mv /.config /mnt/tmp/
 arch-chroot /mnt ./after_chroot.sh
 
+chmod +x /.config/sxhkd/sxhkdrc
+chmod +x /.config/bspwm/bspwmrc
+mv /.config /mnt/home/utku
+echo -e '#!/bin/bash\nchown -R utku /home/utku/.config' > change_owner.sh
+chmod +x change_ownser.sh
+arch-chroot /mnt ./change_owner.sh 
+
 read -r -p "Installation complete. Reboot now? [Y/n]" response
- response=${response,,} # tolower
- if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
     reboot
- fi
+fi
