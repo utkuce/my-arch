@@ -24,9 +24,9 @@ arch-chroot /mnt ./after_chroot.sh
 chmod +x /.config/sxhkd/sxhkdrc
 chmod +x /.config/bspwm/bspwmrc
 mv /.config /mnt/home/utku
-echo -e '#!/bin/bash\nchown -R utku /home/utku/.config' > change_owner.sh
+echo -e '#!/bin/bash\nchown -R utku /home/utku/.config' > /co.sh
 chmod +x change_ownser.sh
-arch-chroot /mnt ./change_owner.sh 
+arch-chroot /mnt ./co.sh 
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
 response=${response,,} # tolower
