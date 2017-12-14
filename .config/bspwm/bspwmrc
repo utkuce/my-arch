@@ -1,2 +1,4 @@
+#!/bin/bash
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 bspc rule -a Firefox desktop='^2' follow=on
