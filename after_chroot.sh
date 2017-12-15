@@ -43,7 +43,7 @@ pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
 pacman -S xorg-server xorg-xinit xterm bspwm sxhkd compton --noconfirm
-echo -e "setxkbmap tr\nsxhkd&\nxterm&\nexec bspwm" > /home/utku/.xinitrc
+echo -e "setxkbmap tr\nexec bspwm" > /home/utku/.xinitrc
 #echo "exec startx" >> /home/utku/.bash_profile
 
 pacman -S rofi xdg-utils ranger w3m --noconfirm
