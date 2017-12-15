@@ -23,6 +23,10 @@ super + n
     desktop_count=`bspc query -D | wc -l`; \
     bspc monitor focused -a $desktop_count; \
     bspc desktop $desktop_count -f
+    
+# remove desktop
+super + alt + q
+    bspc desktop -r
 
 # quit bspwm normally
 super + alt + Escape
