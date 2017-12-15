@@ -3,4 +3,7 @@
 bspc monitor -d I II III IV V VI VII VIII IX X
 bspc rule -a Firefox desktop='^2' follow=on
 
+bspc config border_width 5
+bspc config window_gap 10
+
 compton &
