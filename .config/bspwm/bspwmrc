@@ -6,4 +6,5 @@ bspc rule -a Firefox desktop='^2' follow=on
 bspc config border_width 5
 bspc config window_gap 10
 
+sxhkd &
 compton &
