@@ -7,8 +7,15 @@ super + Return
 	xterm
 
 # program launcher
-super + @space
-	rofi -show drun -modi drun,web:~/.config/web.sh
+super + r
+	rofi -show drun -modi drun,web:~/.config/web.sh -lines 3
+
+super + s
+	rofi -show web -modi drun,web:~/.config/web.sh -lines 0
+
+# ranger
+super + e
+	exec ranger
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -18,22 +25,22 @@ super + Escape
 # bspwm hotkeys
 #
 
-# new desktop
-super + n
-    desktop_count=`bspc query -D | wc -l`; \
-    bspc monitor focused -a $desktop_count; \
-    bspc desktop $desktop_count -f
-    
+# add desktop
+super + d
+	desktop_count=`bspc query -D | wc -l`;\
+	bspc monitor focused -a $desktop_count; \
+	bspc desktop $desktop_count -f
+
 # remove desktop
-super + alt + q
-    bspc desktop -r
+super + q
+	bspc desktop -r
 
 # quit bspwm normally
 super + alt + Escape
 	bspc quit
 
 # close and kill
-super + {_,shift + }q
+alt + {_,shift + }q
 	bspc node -{c,k}
 	
 alt + F4
@@ -70,9 +77,6 @@ super + ctrl + {x,y,z}
 # focus the node in the given direction
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
-	
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
@@ -107,9 +111,6 @@ super + {_,shift + }{1-9,0}
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
-	
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
@@ -130,18 +131,11 @@ super + ctrl + shift + space
 # expand a window by moving one of its side outward
 super + alt + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-	
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}	
-	
+
 # contract a window by moving one of its side inward
 super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-	
-
 # move a floating window
 super + {Left,Down,Up,Right}
-    bspc node -v {-20 0,0 20,0 -20,20 0}
+bspc node -v {-20 0,0 20,0 -20,20 0}
