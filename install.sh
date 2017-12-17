@@ -23,6 +23,7 @@ arch-chroot /mnt ./after_chroot.sh
 
 chmod +x /.config/sxhkd/sxhkdrc
 chmod +x /.config/bspwm/bspwmrc
+chmod +x /.config/web.sh
 mv /.config /mnt/home/utku
 
 read -r -p "Installation complete. Reboot now? [Y/n]" response
