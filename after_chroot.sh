@@ -58,7 +58,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
 su -c "makepkg PKGBUILD --skippgpcheck" utku
 pacman -U packer*.tar.xz --noconfirm
 
-packer -S polybar python-pywal pulsemixer
+packer -S polybar python-pywal pulsemixer --noconfirm
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
