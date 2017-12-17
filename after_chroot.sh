@@ -43,26 +43,24 @@ pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
 pacman -S xorg-server xorg-xinit xterm bspwm sxhkd compton --noconfirm
-echo -e "setxkbmap tr\nexec bspwm" > /home/utku/.xinitrc
+echo -e "setxkbmap tr\nexec sxhkd &\nexec bspwm" > /home/utku/.xinitrc
 #echo "exec startx" >> /home/utku/.bash_profile
 
 pacman -S rofi xdg-utils ranger w3m --noconfirm
 
-# install pacaur
-mkdir -p /tmp/pacaur_install
-chown -R utku /tmp/pacaur_install
-cd /tmp/pacaur_install
-pacman -S expac yajl git --noconfirm --needed
+# install packer
+mkdir -p /tmp/packer_install
+chown -R utku /tmp/packer_install
+cd /tmp/packer_install
+pacman -S expac jshon git --noconfirm --needed
 
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
 su -c "makepkg PKGBUILD --skippgpcheck" utku
-pacman -U cower*.tar.xz --noconfirm
+pacman -U packer*.tar.xz --noconfirm
 
-curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-su -c "makepkg PKGBUILD" utku
-pacman -U pacaur*.tar.xz --noconfirm
+packer -S polybar python-pywal pulsemixer
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
-rm -r /tmp/pacaur_install
+rm -r /tmp/packer_install
 rm /after_chroot.sh
