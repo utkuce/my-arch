@@ -7,7 +7,7 @@ super + Return
 	xterm
 
 # program launcher
-super + r
+super + p
 	rofi -show drun -modi drun,web:~/.config/web.sh -lines 3
 
 super + s
@@ -18,7 +18,7 @@ super + e
 	xterm ranger
 
 # pulsemixer
-super + p
+super + m
     xterm pulsemixer
     
 # make sxhkd reload its configuration files:
@@ -31,9 +31,7 @@ super + Escape
 
 # add desktop
 super + d
-	desktop_count=`bspc query -D | wc -l`;\
 	bspc monitor focused -a $desktop_count; \
-	bspc desktop $desktop_count -f
 
 # remove desktop
 super + q
@@ -51,7 +49,7 @@ alt + F4
     bspc node -c
 
 # alternate between the tiled and monocle layout
-super + m
+super + t
 	bspc desktop -l next
 
 # if the current node is automatic, send it to the last manual, otherwise pull the last leaf
@@ -67,8 +65,8 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,f,F11}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {F9,F10,F11}
+	bspc node -t {tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {x,y,z}
