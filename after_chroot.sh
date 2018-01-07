@@ -35,8 +35,7 @@ sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
-pacman -S xorg-server xorg-xinit xterm bspwm sxhkd compton --noconfirm
-pacman -S rofi xdg-utils ranger w3m feh i3lock scrot arc-gtk-theme --noconfirm
+pacman -S xorg-server xorg-xinit xterm firefox --noconfirm
 
 # install packer
 mkdir -p /tmp/packer_install
@@ -48,10 +47,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
 su -c "makepkg PKGBUILD --skippgpcheck" utku
 pacman -U packer*.tar.xz --noconfirm
 
-packer -S polybar python-pywal pulsemixer micro dropbox --noconfirm
-packer -S ttf-fira-mono ttf-font-awesome ttf-material-design-icons --noconfirm
-
-#nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
+packer -S dropbox --noconfirm
 
 rm -r /tmp/packer_install
 rm /after_chroot.sh
