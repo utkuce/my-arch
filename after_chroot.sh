@@ -31,22 +31,12 @@ echo 'utku:'$pass|chpasswd
 
 pacman -S --needed base-devel --noconfirm
 sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
-#echo 'Defaults targetpw' >> /etc/sudoers
-
-# autologin for my user
-#mkdir /etc/systemd/system/getty@tty1.service.d/
-#autologin=/etc/systemd/system/getty@tty1.service.d/override.conf
-#echo -e '[Service]\nExecStart=' > $autologin
-#echo 'ExecStart=-/usr/bin/agetty --autologin utku --noclear %I $TERM' >> $autologin
 
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
 pacman -S xorg-server xorg-xinit xterm bspwm sxhkd compton --noconfirm
-echo -e "setxkbmap tr\nexec sxhkd &\nexec bspwm" > /home/utku/.xinitrc
-#echo "exec startx" >> /home/utku/.bash_profile
-
-pacman -S rofi xdg-utils ranger w3m feh --noconfirm
+pacman -S rofi xdg-utils ranger w3m feh i3lock scrot arc-gtk-theme --noconfirm
 
 # install packer
 mkdir -p /tmp/packer_install
@@ -58,7 +48,8 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
 su -c "makepkg PKGBUILD --skippgpcheck" utku
 pacman -U packer*.tar.xz --noconfirm
 
-packer -S polybar python-pywal pulsemixer --noconfirm
+packer -S polybar python-pywal pulsemixer micro dropbox --noconfirm
+packer -S ttf-fira-mono ttf-font-awesome ttf-material-design-icons --noconfirm
 
 #nmcli dev wifi connect "NetMASTER Uydunet-B781" password f22d96a1
 
