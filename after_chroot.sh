@@ -20,11 +20,11 @@ bootctl install
 
 pacman -S intel-ucode --noconfirm
 
-echo -e 'default\tarch\ntimeout\t0\neditor\t0' > boot/loader/loader.conf
+# echo -e 'default\tarch\ntimeout\t0\neditor\t0' > boot/loader/loader.conf
 
-arch_conf=boot/loader/entries/arch.conf 
-echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
-echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
+# arch_conf=boot/loader/entries/arch.conf 
+# echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
+# echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
 
 useradd -m -G wheel utku
 echo 'utku:'$pass|chpasswd
