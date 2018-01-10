@@ -49,7 +49,7 @@ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=packer
 su -c "makepkg PKGBUILD --skippgpcheck" utku
 pacman -U packer*.tar.xz --noconfirm
 
-su -c "packer -S dropbox --noconfirm" utku
+# su -c "packer -S dropbox --noconfirm" utku
 
 rm -r /tmp/packer_install
 rm /after_chroot.sh
