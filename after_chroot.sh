@@ -16,7 +16,7 @@ sed -i '8i127.0.0.1\t'$me'.localdomain\t'$me'\n' /etc/hosts
 
 timedatectl set-local-rtc 0
 echo 'root:'$pass|chpasswd
-bootctl install
+#bootctl install
 
 pacman -S intel-ucode --noconfirm
 
@@ -25,7 +25,7 @@ pacman -S intel-ucode --noconfirm
 # arch_conf=boot/loader/entries/arch.conf 
 # echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
 # echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
-pacman -S refind-efi
+pacman -S refind-efi --noconfirm
 refind-install
 
 useradd -m -G wheel utku
