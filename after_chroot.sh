@@ -26,7 +26,7 @@ pacman -S intel-ucode --noconfirm
 # echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
 # echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
 pacman -S refind-efi --noconfirm
-refind-install --usedefault $bootp
+refind-install --usedefault $bootp --alldrivers
 
 useradd -m -G wheel utku
 echo 'utku:'$pass|chpasswd
