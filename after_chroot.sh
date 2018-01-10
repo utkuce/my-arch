@@ -16,17 +16,18 @@ sed -i '8i127.0.0.1\t'$me'.localdomain\t'$me'\n' /etc/hosts
 
 timedatectl set-local-rtc 0
 echo 'root:'$pass|chpasswd
-#bootctl install
+bootctl install
 
 pacman -S intel-ucode --noconfirm
 
-# echo -e 'default\tarch\ntimeout\t0\neditor\t0' > boot/loader/loader.conf
+echo -e 'default\tarch\ntimeout\t0\neditor\t0' > boot/loader/loader.conf
 
-# arch_conf=boot/loader/entries/arch.conf 
-# echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
-# echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
-pacman -S refind-efi --noconfirm
-refind-install --usedefault $bootp --alldrivers
+arch_conf=boot/loader/entries/arch.conf 
+echo -e 'title\tArch Linux\nlinux\t/vmlinuz-linux\ninitrd\t/intel-ucode.img' > $arch_conf
+echo -e 'initrd\t/initramfs-linux.img\noptions\troot='$arch >> $arch_conf
+# pacman -S refind-efi --noconfirm
+# refind-install --usedefault $bootp --alldrivers
+# mkrlconf
 
 useradd -m -G wheel utku
 echo 'utku:'$pass|chpasswd
