@@ -38,7 +38,7 @@ sed -i s/'# %wheel ALL=(ALL) ALL'/'%wheel ALL=(ALL) ALL'/g /etc/sudoers
 pacman -S networkmanager iw wpa_supplicant dhclient --noconfirm
 systemctl enable NetworkManager.service
 
-pacman -S xorg-server xorg-xinit xterm firefox --noconfirm
+pacman -S xorg-server xorg-xinit xterm firefox unzip --noconfirm
 
 # install packer
 mkdir -p /tmp/packer_install
