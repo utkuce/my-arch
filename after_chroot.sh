@@ -54,3 +54,7 @@ pacman -U packer*.tar.xz --noconfirm
 
 rm -r /tmp/packer_install
 rm /after_chroot.sh
+
+sed -i -e 's/minimal/standard/g' /boot/refind_linux.conf
+sed -i '1d' /boot/refind_linux.conf
+sed -i '1d' /boot/refind_linux.conf
